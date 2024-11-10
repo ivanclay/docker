@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  apache-server:
+    image: httpd:latest
+    container_name: dio-challange-container_name
+    ports:
+      - '8080:80'
+    volumes:
+      - ./site:/usr/local/apache2/htdocs
