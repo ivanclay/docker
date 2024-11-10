@@ -22,3 +22,23 @@ Create a local `Docker Swarm Cluster`
 **`docker swarm init --advertise-addr <your-network-adapter-ip>`** for init a cluster
 
 **`docker swarm join --token <swarm-token> ip:port`** to join nodes to the cluster
+
+docker service create --name web-server --replicas 15 -p 8080:80 httpd
+
+docker service ls
+
+docker service ps web-server
+
+docker node update --availability drain node01
+
+docker node update --availability active node01
+
+docker volume create app
+
+cd /var/lib/docker/volumes/app/_data
+
+apt install nfs-server -y
+
+exportfs -ar
+
+[In node02] apt install nfs-common -y 
